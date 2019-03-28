@@ -127,7 +127,7 @@ public class Main extends Application {
 
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("statistics.fxml"));
             Parent root2 = loader.load();
-            Scene scene2 = new Scene(root2, 450, 450);
+            Scene scene2 = new Scene(root2, 500, 650);
             startWindow.setScene(scene2);
             startWindow.show();
         }
