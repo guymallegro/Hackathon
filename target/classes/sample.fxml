@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
-    <AnchorPane layoutX="350.0" layoutY="45.0" prefHeight="311.0" prefWidth="327.0" style="-fx-background-color: #edc107;">
-        <Button fx:id="start" layoutX="183.0" layoutY="189.0" mnemonicParsing="false" onAction="#Start" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #d6a900;" text="Start" textAlignment="CENTER" textFill="WHITE">
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+    <children>
+        <ComboBox fx:id="lang" layoutX="536.0" layoutY="180.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
+        <Label layoutX="538.0" layoutY="145.0" prefHeight="17.0" prefWidth="150.0" text="Select Language">
             <font>
-                <Font size="13.0" />
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+            <textFill>
+                <RadialGradient centerX="1.0" centerY="0.25555554344540554" radius="0.5">
+                    <stops>
+                        <Stop color="#ff8282" />
+                        <Stop color="BLACK" offset="1.0" />
+                    </stops>
+                </RadialGradient>
+            </textFill>
+        </Label>
+        <Button layoutX="536.0" fx:id="stopbutton" layoutY="220.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Stop" visible="false">
+            <font>
+                <Font name="System Bold Italic" size="14.0" />
             </font>
         </Button>
-        <TextArea fx:id="response" prefHeight="100.0" prefWidth="200.0"/>
-    </AnchorPane>
-    <Button fx:id="stop" layoutX="116.0" layoutY="294.0" mnemonicParsing="false" onAction="#Stop" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #d6a900;" text="Stop" textAlignment="CENTER" textFill="WHITE">
-        <font>
-            <Font size="18.0" />
-        </font>
-    </Button>
+        <Label layoutX="83.0" layoutY="26.0" prefHeight="84.0" prefWidth="594.0" text="Class To Text" textFill="#ec1c24">
+            <font>
+                <Font name="Showcard Gothic" size="72.0" />
+            </font>
+        </Label>
+        <Pane layoutX="97.0" layoutY="145.0" prefHeight="178.0" prefWidth="275.0">
+            <children>
+                <ImageView fx:id="taptospeak" onMouseClicked="#Listen" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:src/main/resources/taptospeak1.jpeg" />
+                    </image>
+
+                </ImageView>
+                <ImageView fx:id="listening" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="file:src/main/resources/listening.gif" />
+                    </image>
+
+                </ImageView>
+
+            </children>
+        </Pane>
+    </children>
 
 </AnchorPane>

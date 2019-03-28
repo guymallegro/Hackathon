@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class Main extends Application {
     public final static String GOOGLE_KEY = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
     public TextArea response;
@@ -38,6 +39,7 @@ public class Main extends Application {
     static HashMap<String,Double> wordDistribution;
     public ComboBox lang;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("sample.fxml"));
@@ -48,6 +50,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hackathon!");
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
@@ -78,7 +81,6 @@ public class Main extends Application {
             taptospeak.setVisible(false);
             listening.setVisible(true);
             stopbutton.setVisible(true);
-
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(subtitlesWindow, 450, 450));
             stage.show();
@@ -110,10 +112,6 @@ public class Main extends Application {
             double x= wordsFreq.get(keys.get(0))/NumOfWords;
             wordDistribution.put(keys.get(0),new Double(x));
         }
-
-
-
-
     }
 
     public static HashMap<String,Double> getDistribution(){return wordDistribution; };
