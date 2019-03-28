@@ -108,8 +108,9 @@ public class Main extends Application {
         Collections.sort(keys, (o1, o2) -> (int) (new Integer(wordsFreq.get(o1).compareTo(wordsFreq.get(o2)))));
 
         for(int i=0;i<Math.min(10,keys.size());i++){
-            double x= wordsFreq.get(keys.get(0))/NumOfWords;
-            wordDistribution.put(keys.get(0),new Double(x));
+            double x= (double)wordsFreq.get(keys.get(i))/NumOfWords;
+
+            wordDistribution.put(keys.get(i),new Double(x));
         }
 
 
