@@ -35,6 +35,9 @@ public class Main extends Application {
     public ImageView taptospeak;
     public Button stopbutton;
     private GSpeechDuplex duplex;
+    public ImageView play;
+    public ImageView pause;
+    public ImageView stop;
     private Microphone mic;
     HashMap<String,Integer> wordsFreq;
     static HashMap<String,Double> wordDistribution;
@@ -80,9 +83,8 @@ public class Main extends Application {
             stage.setY(primaryScreenBounds.getMinY());
             stage.setWidth(primaryScreenBounds.getWidth());
             stage.setHeight(primaryScreenBounds.getHeight()/10);
-            taptospeak.setVisible(false);
+            play.setVisible(false);
             listening.setVisible(true);
-            stopbutton.setVisible(true);
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(subtitlesWindow, 450, 450));
             stage.show();
@@ -135,12 +137,9 @@ public class Main extends Application {
 
     public void Stop() {
         stage.close();
-        taptospeak.setVisible(true);
         listening.setVisible(false);
-
-        buttonstatistic.setDisable(false);
+        play.setVisible(true);
+        //buttonstatistic.setDisable(false);
 //        duplex.stopSpeechRecognition();
-        taptospeak.setDisable(false);
-        stopbutton.setDisable(true);
     }
 }
