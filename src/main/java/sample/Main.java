@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
@@ -29,7 +30,7 @@ public class Main extends Application {
     public ImageView taptospeak;
     public ImageView listening;
     public Button stopbutton;
-    public ChoiceBox lang;
+    public ComboBox lang;
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("sample.fxml"));
@@ -47,7 +48,6 @@ public class Main extends Application {
     }
 
     public void Listen() {
-
         taptospeak.setVisible(false);
         listening.setVisible(true);
         stopbutton.setVisible(true);
@@ -100,5 +100,13 @@ public class Main extends Application {
         duplex.stopSpeechRecognition();
         taptospeak.setDisable(false);
         stopbutton.setDisable(true);
+    }
+
+    public void initialize (){
+        lang.getItems().add("English");
+        lang.getItems().add("Hebrew");
+        lang.getItems().add("Arabic");
+
+
     }
 }
