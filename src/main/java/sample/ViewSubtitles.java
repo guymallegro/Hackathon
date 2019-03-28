@@ -4,6 +4,7 @@ import com.darkprograms.speech.microphone.Microphone;
 import com.darkprograms.speech.recognizer.GSpeechDuplex;
 import com.darkprograms.speech.recognizer.GSpeechResponseListener;
 import com.darkprograms.speech.recognizer.GoogleResponse;
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import javafx.scene.control.TextArea;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
@@ -13,17 +14,22 @@ public class ViewSubtitles {
     private Microphone mic;
 
     public void initialize(){
+        shownText.setStyle("-fx-font-size: 50 Thaoma; -fx-font-weight: bold");
         mic = new Microphone(FLACFileWriter.FLAC);
         duplex = new GSpeechDuplex(Main.GOOGLE_KEY);
         duplex.setLanguage("he");
         duplex.addResponseListener(new GSpeechResponseListener() {
             public void onResponse(GoogleResponse gr) {
-                String output = "";
-                output = gr.getResponse();
-                if (gr.getResponse() == null) {
-                    return;
+                try {
+                    String output = "";
+                    output = gr.getResponse();
+                    if (gr.getResponse() == null) {
+                        return;
+                    }
+                    shownText.setText(output);
+                }catch (Exception e){
+
                 }
-                shownText.setText(output);
             }
         });
         new Thread(() -> {
