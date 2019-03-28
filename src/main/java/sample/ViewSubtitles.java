@@ -21,7 +21,7 @@ public class ViewSubtitles {
         shownText.setStyle("-fx-font-size: 50 Thaoma; -fx-font-weight: bold");
         mic = new Microphone(FLACFileWriter.FLAC);
         duplex = new GSpeechDuplex(Main.GOOGLE_KEY);
-        duplex.setLanguage("he");
+        duplex.setLanguage("en");
         duplex.addResponseListener(new GSpeechResponseListener() {
             public void onResponse(GoogleResponse gr) {
                 try {
@@ -62,23 +62,18 @@ public class ViewSubtitles {
     }
 
     private void addToHtml(String text) throws IOException {
-//        String html = "<!DOCTYPE html>\n" +
-//                "<html lang=\"he\">\n" +
-//                "<head>\n" +
-//                "    <meta charset=\"utf-8\" />\n" +
-//                "    <meta http-equiv=\"refresh\" content=\"0.1\"/>\n" +
-//                "    <title>דף בעברית</title>\n" +
-//                "</head>\n" +
-//                "\n" +
-//                "<body>\n" +
-//                "\n" +
-//                "<p>";
+        String html = "<!DOCTYPE html>\n" +
+                "<html lang=\"he\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"utf-8\" />\n" +
+                "    <meta http-equiv=\"refresh\" content=\"1\"/>\n" +
+                "</head>\n" +
+                "\n";
         PrintWriter pw = new PrintWriter("index.html");
         pw.close();
         OutputStream os = new FileOutputStream(new File("index.html"), true);
-        os.write((text).getBytes(), 0, ((text)).length());
-        os.write(("</p></body>").getBytes(), 0, ("</p></body>").length());
+        os.write((html+text).getBytes(), 0, ((html+text)).length());
+        //os.write(("</p></body>").getBytes(), 0, ("</p></body>").length());
         os.close();
     }
-
 }
