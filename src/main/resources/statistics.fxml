@@ -50,7 +50,7 @@
             <Label fx:id="Word8" GridPane.rowIndex="10" />
             <Label fx:id="Word9" GridPane.rowIndex="11" />
              <Label fx:id="Word10" GridPane.rowIndex="12" />
-            <Label fx:id="MostCommon" prefHeight="17.0" prefWidth="65.0" GridPane.columnIndex="1" />
+            <Label fx:id="MostCommon" prefHeight="27.0" prefWidth="241.0" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Label layoutX="43.0" layoutY="38.0" prefHeight="84.0" prefWidth="514.0" text="Statistics" textFill="#ec1c24">

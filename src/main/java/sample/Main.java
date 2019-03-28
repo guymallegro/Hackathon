@@ -22,6 +22,7 @@ import javafx.stage.StageStyle;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -107,10 +108,12 @@ public class Main extends Application {
         }
 
         List<String> keys = new ArrayList(wordsFreq.keySet());
-        Collections.sort(keys, (o1, o2) -> (int) (new Integer(wordsFreq.get(o1).compareTo(wordsFreq.get(o2)))));
+        Collections.sort(keys, (o2, o1) -> (int) (new Integer(wordsFreq.get(o1).compareTo(wordsFreq.get(o2)))));
 
         for(int i=0;i<Math.min(10,keys.size());i++){
             double x= (double)wordsFreq.get(keys.get(i))/NumOfWords;
+            x=x*100;
+            x =Double.parseDouble(new DecimalFormat("##.##").format(x));
 
             wordDistribution.put(keys.get(i),new Double(x));
         }
