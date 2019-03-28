@@ -15,6 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -38,7 +39,8 @@ public class Main extends Application {
     HashMap<String,Integer> wordsFreq;
     static HashMap<String,Double> wordDistribution;
     public ComboBox lang;
-
+    public Button buttonstatistic;
+    Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -71,13 +73,13 @@ public class Main extends Application {
 
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
-            Stage stage = new Stage();
+            stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());
             stage.setWidth(primaryScreenBounds.getWidth());
-            stage.setHeight(primaryScreenBounds.getHeight()/15);
+            stage.setHeight(primaryScreenBounds.getHeight()/10);
             taptospeak.setVisible(false);
             listening.setVisible(true);
             stopbutton.setVisible(true);
@@ -91,33 +93,36 @@ public class Main extends Application {
     }
 
     public void Statistics(){
-        int maxcomonterm=0;
-        String commonterm="";
+
+        wordsFreq=ViewSubtitles.getDictionary();
+        wordDistribution=new HashMap<String,Double> ();
         int NumOfWords=0;
 
         for (String word:
                 wordsFreq.keySet()) {
 
-            if(wordsFreq.get(word)>maxcomonterm){
-                maxcomonterm=wordsFreq.get(word);
-                commonterm=word;
-            }
             NumOfWords=NumOfWords+wordsFreq.get(word);
         }
 
         List<String> keys = new ArrayList(wordsFreq.keySet());
         Collections.sort(keys, (o1, o2) -> (int) (new Integer(wordsFreq.get(o1).compareTo(wordsFreq.get(o2)))));
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<Math.min(10,keys.size());i++){
             double x= wordsFreq.get(keys.get(0))/NumOfWords;
             wordDistribution.put(keys.get(0),new Double(x));
         }
+
+
     }
 
     public static HashMap<String,Double> getDistribution(){return wordDistribution; };
 
-    public void Stop(ActionEvent actionEvent) {
-        mic.close();
+    public void Stop() {
+        stage.close();
+        taptospeak.setVisible(true);
+        listening.setVisible(false);
+
+        buttonstatistic.setDisable(false);
         duplex.stopSpeechRecognition();
         taptospeak.setDisable(false);
         stopbutton.setDisable(true);
