@@ -113,6 +113,21 @@ public class Main extends Application {
         }
 
 
+        try {
+            Stage startWindow;
+            startWindow = new Stage();
+            startWindow.initModality(Modality.APPLICATION_MODAL);
+            startWindow.setTitle("Welcome");
+
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("statistics.fxml"));
+            Parent root2 = loader.load();
+            Scene scene2 = new Scene(root2, 630, 685);
+            startWindow.setScene(scene2);
+            startWindow.show();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     public static HashMap<String,Double> getDistribution(){return wordDistribution; };
@@ -123,7 +138,7 @@ public class Main extends Application {
         listening.setVisible(false);
 
         buttonstatistic.setDisable(false);
-        duplex.stopSpeechRecognition();
+//        duplex.stopSpeechRecognition();
         taptospeak.setDisable(false);
         stopbutton.setDisable(true);
     }

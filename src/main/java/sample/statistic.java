@@ -29,25 +29,25 @@ public class statistic {
         HashMap<String,Double> dist=Main.getDistribution();
         List<String> keys = new ArrayList(dist.keySet());
         Collections.sort(keys, (o1, o2) -> (int) (new Integer(dist.get(o1).compareTo(dist.get(o2)))));
-
+        if(keys.size()>0)
         MostCommon.setText(keys.get(0)+" "+ dist.get(keys.get(0)));
-        if(keys.size()>=1)
+        if(keys.size()>1)
         Word1.setText(keys.get(1)+" "+ dist.get(keys.get(1)));
-        if(keys.size()>=2)
+        if(keys.size()>2)
         Word2.setText(keys.get(2)+" "+ dist.get(keys.get(2)));
-        if(keys.size()>=3)
+        if(keys.size()>3)
         Word3.setText(keys.get(3)+" "+ dist.get(keys.get(3)));
-        if(keys.size()>=4)
+        if(keys.size()>4)
         Word4.setText(keys.get(4)+" "+ dist.get(keys.get(4)));
-        if(keys.size()>=5)
+        if(keys.size()>5)
         Word5.setText(keys.get(5)+" "+ dist.get(keys.get(5)));
-        if(keys.size()>=6)
+        if(keys.size()>6)
         Word6.setText(keys.get(6)+" "+ dist.get(keys.get(6)));
-        if(keys.size()>=7)
+        if(keys.size()>7)
         Word7.setText(keys.get(7)+" "+ dist.get(keys.get(7)));
-        if(keys.size()>=8)
+        if(keys.size()>8)
         Word8.setText(keys.get(8)+" "+ dist.get(keys.get(8)));
-        if(keys.size()>=9)
+        if(keys.size()>9)
         Word9.setText(keys.get(9)+" "+ dist.get(keys.get(9)));
 
 
