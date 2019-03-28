@@ -43,7 +43,7 @@
 
             </children>
         </Pane>
-        <Button layoutX="536.0" layoutY="316.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
+        <Button onAction="#Statistics" layoutX="536.0" layoutY="316.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
