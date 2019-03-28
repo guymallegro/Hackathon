@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.statistic">
+   <children>
+      <GridPane id="MostCommanWord" layoutX="-3.0" layoutY="155.0" prefHeight="319.0" prefWidth="606.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="194.3333536783854" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="453.6666717529297" minWidth="10.0" prefWidth="410.999979654948" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="27.0" prefWidth="201.0" text="  Most Common word:">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="167.0" text="  Distribution " GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Word1" GridPane.rowIndex="3" />
+            <Label fx:id="Word2" GridPane.rowIndex="4" />
+            <Label fx:id="Word3" GridPane.rowIndex="5" />
+            <Label fx:id="Word4" GridPane.rowIndex="6" />
+            <Label fx:id="Word5" GridPane.rowIndex="7" />
+            <Label fx:id="Word6" GridPane.rowIndex="8" />
+            <Label fx:id="Word7" GridPane.rowIndex="9" />
+            <Label fx:id="Word8" GridPane.rowIndex="10" />
+            <Label fx:id="Word9" GridPane.rowIndex="11" />
+             <Label fx:id="Word10" GridPane.rowIndex="12" />
+            <Label fx:id="MostCommon" prefHeight="17.0" prefWidth="65.0" GridPane.columnIndex="1" />
+            <Label id="d1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label id="d2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label id="d3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label id="d4" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label id="d5" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label id="d6" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label id="d7" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label id="d8" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label id="d10" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label id="d9" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+         </children>
+      </GridPane>
+      <Label layoutX="43.0" layoutY="38.0" prefHeight="84.0" prefWidth="514.0" text="Statistics" textFill="#ec1c24">
+         <font>
+            <Font name="Showcard Gothic" size="72.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

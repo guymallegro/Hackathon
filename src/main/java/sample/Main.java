@@ -11,6 +11,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -20,6 +21,10 @@ import javafx.stage.StageStyle;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 public class Main extends Application {
     public final static String GOOGLE_KEY = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
@@ -29,6 +34,9 @@ public class Main extends Application {
     public Button stopbutton;
     private GSpeechDuplex duplex;
     private Microphone mic;
+    HashMap<String,Integer> wordsFreq;
+    static HashMap<String,Double> wordDistribution;
+    public ComboBox lang;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -45,6 +53,15 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public void initialize (){
+        lang.getItems().add("English");
+        lang.getItems().add("Hebrew");
+        lang.getItems().add("Arabic");
+
+
+    }
+
 
     public void Listen(MouseEvent actionEvent) {
         Parent subtitlesWindow;
@@ -70,6 +87,36 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+    public void Statistics(){
+        int maxcomonterm=0;
+        String commonterm="";
+        int NumOfWords=0;
+
+        for (String word:
+                wordsFreq.keySet()) {
+
+            if(wordsFreq.get(word)>maxcomonterm){
+                maxcomonterm=wordsFreq.get(word);
+                commonterm=word;
+            }
+            NumOfWords=NumOfWords+wordsFreq.get(word);
+        }
+
+        List<String> keys = new ArrayList(wordsFreq.keySet());
+        Collections.sort(keys, (o1, o2) -> (int) (new Integer(wordsFreq.get(o1).compareTo(wordsFreq.get(o2)))));
+
+        for(int i=0;i<10;i++){
+            double x= wordsFreq.get(keys.get(0))/NumOfWords;
+            wordDistribution.put(keys.get(0),new Double(x));
+        }
+
+
+
+
+    }
+
+    public static HashMap<String,Double> getDistribution(){return wordDistribution; };
 
     public void Stop(ActionEvent actionEvent) {
         mic.close();
