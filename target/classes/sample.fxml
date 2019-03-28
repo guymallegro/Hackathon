@@ -13,8 +13,8 @@
 
 <AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <children>
-        <ComboBox fx:id="lang" layoutX="536.0" layoutY="180.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
-        <Label layoutX="538.0" layoutY="145.0" prefHeight="17.0" prefWidth="150.0" text="Select Language">
+        <ComboBox fx:id="lang" layoutX="536.0" layoutY="262.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
+        <Label layoutX="536.0" layoutY="211.0" prefHeight="17.0" prefWidth="150.0" text="Select Language">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
@@ -27,11 +27,6 @@
                 </RadialGradient>
             </textFill>
         </Label>
-        <Button fx:id="stopbutton" layoutX="536.0" layoutY="220.0" mnemonicParsing="false" prefHeight="30.0" onAction="#Stop" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Stop" visible="false">
-            <font>
-                <Font name="System Bold Italic" size="14.0" />
-            </font>
-        </Button>
         <Label layoutX="83.0" layoutY="26.0" prefHeight="84.0" prefWidth="594.0" text="Class To Text" textFill="#ec1c24">
             <font>
                 <Font name="Showcard Gothic" size="72.0" />
@@ -39,12 +34,6 @@
         </Label>
         <Pane layoutX="97.0" layoutY="145.0" prefHeight="178.0" prefWidth="275.0">
             <children>
-                <ImageView fx:id="taptospeak" fitHeight="250.0" fitWidth="300.0" onMouseClicked="#Listen" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="file:src/main/resources/taptospeak.jpeg" />
-                    </image>
-
-                </ImageView>
                 <ImageView fx:id="listening" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
                         <Image url="file:src/main/resources/listening.gif" />
@@ -54,11 +43,31 @@
 
             </children>
         </Pane>
-      <Button layoutX="536.0" layoutY="291.0" disable="true" fx:id="buttonstatistic" onAction="#Statistics" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
+        <Button layoutX="536.0" layoutY="316.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Pane layoutX="24.0" layoutY="116.0" prefHeight="84.0" prefWidth="653.0">
+            <children>
+                <ImageView fx:id="play" fitHeight="75.0" fitWidth="75.0" layoutX="191.0" layoutY="20.0" onMouseClicked="#Listen" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:src/main/resources/play.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pause" fitHeight="75.0" fitWidth="75.0" layoutX="288.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:src/main/resources/pause.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="stop" fitHeight="75.0" fitWidth="75.0" layoutX="382.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:src/main/resources/stop.png" />
+                    </image>
+                </ImageView>
+
+            </children>
+        </Pane>
     </children>
 
 </AnchorPane>
