@@ -1,5 +1,8 @@
+
 .text-area {
     -fx-background-color: transparent;
+    -fx-font-size: 50pt;
+
 }
 
 .text-area .scroll-pane {
