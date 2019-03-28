@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 import java.io.IOException;
@@ -42,16 +43,17 @@ public class Main extends Application {
         launch(args);
     }
 
-    public void Start(ActionEvent actionEvent) {
+    public void Listen(ActionEvent actionEvent) {
         Parent subtitlesWindow;
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
             Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());
             stage.setWidth(primaryScreenBounds.getWidth());
-            stage.setHeight(primaryScreenBounds.getHeight()/10);
+            stage.setHeight(primaryScreenBounds.getHeight()/15);
 
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(subtitlesWindow, 450, 450));
