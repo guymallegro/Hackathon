@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -27,8 +26,6 @@ public class Main extends Application {
     public TextArea response;
     private GSpeechDuplex duplex;
     private Microphone mic;
-    public Button stop;
-    public Button start;
     public ImageView taptospeak;
     public ImageView listening;
     public Button stopbutton;
@@ -42,8 +39,6 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hackathon!");
         primaryStage.show();
-
-
 
     }
 
@@ -96,14 +91,14 @@ public class Main extends Application {
                 ex.printStackTrace();
             }
         }).start();
-        start.setDisable(true);
-        stop.setDisable(false);
+        taptospeak.setDisable(true);
+        stopbutton.setDisable(false);
     }
 
     public void Stop(ActionEvent actionEvent) {
         mic.close();
         duplex.stopSpeechRecognition();
-        start.setDisable(false);
-        stop.setDisable(true);
+        taptospeak.setDisable(false);
+        stopbutton.setDisable(true);
     }
 }
