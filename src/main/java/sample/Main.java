@@ -58,6 +58,9 @@ public class Main extends Application {
             stage.setY(primaryScreenBounds.getMinY());
             stage.setWidth(primaryScreenBounds.getWidth());
             stage.setHeight(primaryScreenBounds.getHeight()/15);
+            taptospeak.setVisible(false);
+            listening.setVisible(true);
+            stopbutton.setVisible(true);
 
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(subtitlesWindow, 450, 450));
@@ -66,29 +69,6 @@ public class Main extends Application {
         catch (IOException e) {
             e.printStackTrace();
         }
-//        mic = new Microphone(FLACFileWriter.FLAC);
-//        duplex = new GSpeechDuplex(GOOGLE_KEY);
-//        duplex.setLanguage("he");
-//        duplex.addResponseListener(new GSpeechResponseListener() {
-//            public void onResponse(GoogleResponse gr) {
-//                String output = "";
-//                output = gr.getResponse();
-//                if (gr.getResponse() == null) {
-//                    return;
-//                }
-//                response.setText("");
-//                response.setText(output);
-//            }
-//        });
-//        new Thread(() -> {
-//            try {
-//                duplex.recognize(mic.getTargetDataLine(), mic.getAudioFormat());
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        }).start();
-//        taptospeak.setDisable(true);
-//        stopbutton.setDisable(false);
     }
 
     public void Stop(ActionEvent actionEvent) {

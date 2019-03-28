@@ -42,18 +42,21 @@
             <children>
                 <ImageView fx:id="taptospeak" fitHeight="250.0" fitWidth="300.0" onMouseClicked="#Listen" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="file:src/main/resources/listening.gif" />
+                        <Image url="file:src/main/resources/taptospeak.jpeg" />
                     </image>
 
                 </ImageView>
                 <ImageView fx:id="listening" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
-                        <Image url="file:src/main/resources/taptospeak.jpeg" />
+                        <Image url="file:src/main/resources/listening.gif" />
                     </image>
 
                 </ImageView>
-
-            </children>
+                <Button layoutX="536.0" layoutY="291.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>            </children>
         </Pane>
       <TextArea fx:id="response" layoutX="330.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" />
     </children>
