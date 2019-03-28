@@ -8,11 +8,13 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -27,7 +29,10 @@ public class Main extends Application {
     private Microphone mic;
     public Button stop;
     public Button start;
-
+    public ImageView taptospeak;
+    public ImageView listening;
+    public Button stopbutton;
+    public ChoiceBox lang;
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("sample.fxml"));
@@ -37,13 +42,20 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hackathon!");
         primaryStage.show();
+
+
+
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public void Listen(ActionEvent actionEvent) {
+    public void Listen() {
+
+        taptospeak.setVisible(false);
+        listening.setVisible(true);
+        stopbutton.setVisible(true);
         Parent subtitlesWindow;
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
