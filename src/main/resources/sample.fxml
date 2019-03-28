@@ -12,7 +12,7 @@
                 <Font size="13.0" />
             </font>
         </Button>
-        <TextArea fx:id="response" prefHeight="100.0" prefWidth="200.0" />
+        <TextArea fx:id="response" prefHeight="100.0" prefWidth="200.0"/>
     </AnchorPane>
     <Button fx:id="stop" layoutX="116.0" layoutY="294.0" mnemonicParsing="false" onAction="#Stop" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #d6a900;" text="Stop" textAlignment="CENTER" textFill="WHITE">
         <font>

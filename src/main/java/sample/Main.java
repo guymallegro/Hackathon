@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 public class Main extends Application {
-    private final String GOOGLE_KEY="AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
+    private final String GOOGLE_KEY = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
     public TextArea response;
     private GSpeechDuplex duplex;
     private Microphone mic;
@@ -23,10 +23,11 @@ public class Main extends Application {
     public Button start;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("sample.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("style.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hackathon!");
         primaryStage.show();
@@ -39,10 +40,10 @@ public class Main extends Application {
     public void Start(ActionEvent actionEvent) {
         mic = new Microphone(FLACFileWriter.FLAC);
         duplex = new GSpeechDuplex(GOOGLE_KEY);
-        duplex.setLanguage("en");
+        duplex.setLanguage("he");
         duplex.addResponseListener(new GSpeechResponseListener() {
             public void onResponse(GoogleResponse gr) {
-                String output="";
+                String output = "";
                 output = gr.getResponse();
                 if (gr.getResponse() == null) {
                     return;
@@ -57,7 +58,6 @@ public class Main extends Application {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-
         }).start();
         start.setDisable(true);
         stop.setDisable(false);
