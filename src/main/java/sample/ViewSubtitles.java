@@ -62,6 +62,7 @@ public class ViewSubtitles {
     }
 
     private void addToHtml(String text) throws IOException {
+        String utfString = convertToUTF8(text);
         String html = "<!DOCTYPE html>\n" +
                 "<html lang=\"he\">\n" +
                 "<head>\n" +
@@ -72,8 +73,17 @@ public class ViewSubtitles {
         PrintWriter pw = new PrintWriter("index.html");
         pw.close();
         OutputStream os = new FileOutputStream(new File("index.html"), true);
-        os.write((html+text).getBytes(), 0, ((html+text)).length());
-        //os.write(("</p></body>").getBytes(), 0, ("</p></body>").length());
+        os.write((html + utfString).getBytes(), 0, ((html + utfString)).length());
         os.close();
+    }
+
+    private static String convertToUTF8(String s) {
+        String out = null;
+        try {
+            out = new String(s.getBytes("UTF-8"), "ISO-8859-1");
+        } catch (java.io.UnsupportedEncodingException e) {
+            return null;
+        }
+        return out;
     }
 }

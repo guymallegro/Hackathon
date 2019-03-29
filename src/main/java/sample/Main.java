@@ -97,11 +97,11 @@ public class Main extends Application {
             return;
         }
         Parent subtitlesWindow;
+        Controller.setLang(lang.getValue().toString());
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
             stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            //Controller.setLang(lang.getValue().toString());
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());

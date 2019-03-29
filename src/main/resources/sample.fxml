@@ -11,10 +11,10 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <children>
-        <ComboBox fx:id="lang" onAction="#setLanguage" layoutX="248.0" layoutY="347.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
-        <Label layoutX="97.0" layoutY="347.0" prefHeight="17.0" prefWidth="150.0" text="Select Language:">
+        <ComboBox fx:id="lang" layoutX="206.0" layoutY="420.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
+        <Label layoutX="22.0" layoutY="424.0" prefHeight="21.0" prefWidth="184.0" text="Select Language:">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
@@ -40,10 +40,15 @@
                     </image>
 
                 </ImageView>
+                <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="206.0" layoutY="88.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="file:src/main/resources/frame.png" />
+                    </image>
+                </ImageView>
 
             </children>
         </Pane>
-        <Button layoutX="429.0" layoutY="347.0" mnemonicParsing="false" onAction="#Statistics" prefHeight="20.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Statistics">
+        <Button layoutX="407.0" layoutY="418.0" mnemonicParsing="false" onAction="#Statistics" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" text="Statistics">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
