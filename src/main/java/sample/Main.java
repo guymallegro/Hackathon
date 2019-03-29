@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -37,6 +38,7 @@ public class Main extends Application {
     public ImageView stop;
     public ComboBox lang;
     Stage stage;
+    public boolean selected = false;
 
 
     @Override
@@ -88,6 +90,12 @@ public class Main extends Application {
 
 
     public void Listen(MouseEvent actionEvent) {
+        if (selected == false){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("please choose language before");
+            alert.show();
+            return;
+        }
         Parent subtitlesWindow;
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
@@ -160,5 +168,6 @@ public class Main extends Application {
 
     public void setLanguage(ActionEvent actionEvent) {
         Controller.setLang(lang.getValue().toString());
+        selected = true;
     }
 }
