@@ -89,11 +89,12 @@ public class Main extends Application {
 
     public void Listen(MouseEvent actionEvent) {
         Parent subtitlesWindow;
+        Controller.setLang(lang.getValue().toString());
+        Controller.setLang(lang.getValue().toString());
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
             stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
-            //Controller.setLang(lang.getValue().toString());
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());
@@ -158,7 +159,4 @@ public class Main extends Application {
         play.setDisable(false);
     }
 
-    public void setLanguage(ActionEvent actionEvent) {
-        Controller.setLang(lang.getValue().toString());
-    }
 }

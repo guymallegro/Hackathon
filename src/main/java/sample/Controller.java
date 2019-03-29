@@ -12,10 +12,13 @@ public class Controller {
         switch (language){
             case "English":
                 lang = "en";
+                break;
             case "Hebrew":
                 lang = "he";
+                break;
             case "Arabic":
                 lang = "ar";
+                break;
         }
 
     }
