@@ -3,6 +3,7 @@ package sample;
 import com.darkprograms.speech.microphone.Microphone;
 import com.darkprograms.speech.recognizer.GSpeechDuplex;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
@@ -36,6 +37,7 @@ public class Main extends Application {
     public ImageView stop;
     public ComboBox lang;
     Stage stage;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -87,11 +89,11 @@ public class Main extends Application {
 
     public void Listen(MouseEvent actionEvent) {
         Parent subtitlesWindow;
-
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
             stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
+            //Controller.setLang(lang.getValue().toString());
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());
@@ -154,5 +156,9 @@ public class Main extends Application {
         play.setVisible(true);
         listening.setVisible(false);
         play.setDisable(false);
+    }
+
+    public void setLanguage(ActionEvent actionEvent) {
+        Controller.setLang(lang.getValue().toString());
     }
 }

@@ -21,7 +21,7 @@ public class ViewSubtitles {
         shownText.setStyle("-fx-font-size: 50 Thaoma; -fx-font-weight: bold");
         mic = new Microphone(FLACFileWriter.FLAC);
         duplex = new GSpeechDuplex(Main.GOOGLE_KEY);
-        duplex.setLanguage("en");
+        duplex.setLanguage(Controller.getLang());
         duplex.addResponseListener(new GSpeechResponseListener() {
             public void onResponse(GoogleResponse gr) {
                 try {
