@@ -90,18 +90,18 @@ public class Main extends Application {
 
 
     public void Listen(MouseEvent actionEvent) {
-        if (selected == false){
+        if (!selected){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setContentText("please choose language before");
             alert.show();
             return;
         }
         Parent subtitlesWindow;
-        Controller.setLang(lang.getValue().toString());
         try {
             subtitlesWindow = FXMLLoader.load(getClass().getClassLoader().getResource("subtitles.fxml"));
             stage = new Stage();
             stage.initStyle(StageStyle.UNDECORATED);
+            //Controller.setLang(lang.getValue().toString());
             Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
             stage.setX(primaryScreenBounds.getMinX());
             stage.setY(primaryScreenBounds.getMinY());
@@ -169,5 +169,7 @@ public class Main extends Application {
     public void setLanguage(ActionEvent actionEvent) {
         Controller.setLang(lang.getValue().toString());
         selected = true;
+        pause.setDisable(false);
+        stop.setDisable(false);
     }
 }

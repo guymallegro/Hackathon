@@ -13,7 +13,7 @@
 
 <AnchorPane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <children>
-        <ComboBox fx:id="lang" layoutX="206.0" layoutY="420.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
+        <ComboBox fx:id="lang" onAction="#setLanguage" layoutX="206.0" layoutY="420.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ec1c24;" />
         <Label layoutX="22.0" layoutY="424.0" prefHeight="21.0" prefWidth="184.0" text="Select Language:">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
@@ -60,12 +60,12 @@
                         <Image url="file:src/main/resources/play.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="pause" fitHeight="75.0" fitWidth="75.0" layoutX="288.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="pause" fitHeight="75.0" fitWidth="75.0" layoutX="288.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true" disable="true">
                     <image>
                         <Image url="file:src/main/resources/pause.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="stop" fitHeight="75.0" fitWidth="75.0" layoutX="382.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="stop" fitHeight="75.0" fitWidth="75.0" layoutX="382.0" layoutY="20.0" onMouseClicked="#Stop" pickOnBounds="true" preserveRatio="true" disable="true">
                     <image>
                         <Image url="file:src/main/resources/stop.png" />
                     </image>
